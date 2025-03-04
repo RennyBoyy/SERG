@@ -145,13 +145,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 91103445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb943ee248cd4645b976cb0e80fad9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 44827fbd3daa86e438009840ec726ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 6819339041786585191, guid: a01e91747ca1c404fb4dd91980d8c7a1, type: 3}
   player: {fileID: 479533871}
-  spawnDistance: 20
-  spawnInterval: 3
+  spawnDistance: 30
+  spawnInterval: 5
   deleteDistance: 10
   spawnPoints:
   - {fileID: 1079612942}
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcc40f5125dd724ea5314029bd5a7da, type: 3}
+  m_Script: {fileID: 11500000, guid: 6143dcef01f8c854e8a6c886580ba7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 479533871}
@@ -834,7 +834,6 @@ GameObject:
   - component: {fileID: 479533866}
   - component: {fileID: 479533872}
   - component: {fileID: 479533873}
-  - component: {fileID: 479533874}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -851,17 +850,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 479533865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c1980b99487eb54ca774692fc9790fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 3acd806130208b04bb2e67bf9ffb2fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 10
-  laneDistance: 4
-  resetZPosition: 600
-  resetOffset: 10
-  environment: {fileID: 0}
-  baseSpeed: 10
-  maxSpeed: 30
-  speedIncreaseRate: 0.1
+  Projectile: {fileID: 3166033798124873481, guid: c1d0f9a8e28d58f4ea0f143be72991b1, type: 3}
+  shootPoint: {fileID: 703326529}
 --- !u!143 &479533867
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1013,23 +1006,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 479533865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19222ac1efa6cae4198e8049992d04d0, type: 3}
+  m_Script: {fileID: 11500000, guid: f7c146c8be569c1419a6f2ce3a53ebbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 3166033798124873481, guid: c1d0f9a8e28d58f4ea0f143be72991b1, type: 3}
-  shootPoint: {fileID: 703326529}
---- !u!114 &479533874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479533865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32015720f394964484cf504c0197097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  forwardSpeed: 10
+  laneDistance: 4
+  resetZPosition: 1000
+  resetOffset: 10
+  environment: {fileID: 0}
+  baseSpeed: 10
+  maxSpeed: 30
+  speedIncreaseRate: 0.1
 --- !u!1 &494182514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,11 +1105,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 599918305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b561cdc9672cb44586c486b96d00215, type: 3}
+  m_Script: {fileID: 11500000, guid: fa8ded192454a4a428c915560b104584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 810473460}
-  scoreMultiplier: 10
+  scoreMultiplier: 1
 --- !u!4 &599918307
 Transform:
   m_ObjectHideFlags: 0
@@ -1334,12 +1321,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 775729790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3960145071126b7448526744a5f17882, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e855f28c960260478f4990f16b6a60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 479533866}
-  shootCooldown: 0.5
-  Fire: {fileID: 479533873}
+  movement: {fileID: 479533873}
+  shootCooldown: 1
+  Fire: {fileID: 479533866}
   moveThresholdX: 0.5
   moveThresholdY: 0.3
   InputDelay: 0.4
