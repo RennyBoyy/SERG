@@ -1,37 +1,19 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MMhandler : MonoBehaviour
 {
-    [SerializeField] private AudioClip mainMenuMusic;  // Music clip for the main menu
-    [SerializeField] private Button playButton;        // Reference to Play button
+    [SerializeField] private AudioClip mainMenuMusic; // Assign this in the Inspector
 
-    private void Start()
+    void Start()
     {
-        // Set the play button listener every time the scene loads
-        playButton.onClick.AddListener(PlayGame);
-
-        // Ensure the main menu music is playing if it's not already
-        if (AudioManager.Instance != null && AudioManager.Instance.GetBackgroundMusic().clip != mainMenuMusic)
-        {
-            AudioManager.Instance.PlayBackgroundMusic(mainMenuMusic); // Play main menu music if it's not playing
-        }
-    }
-
-    // Play the game
-    public void PlayGame()
-    {
-        // Load the MainGameScene
-        SceneManager.LoadScene("MainGameScene");
-
-        // Start the background music for the game
+        // Ensure AudioManager exists and plays the correct background music
         if (AudioManager.Instance != null)
         {
-            AudioManager.Instance.PlayBackgroundMusic(AudioManager.Instance.GetBackgroundMusic().clip); // Or pass the desired game music clip
+            AudioManager.Instance.PlayBackgroundMusic(mainMenuMusic);
         }
-
-        // Ensure the game starts and Time.timeScale is reset
-        Time.timeScale = 1f;
+        else
+        {
+            Debug.LogWarning("AudioManager instance not found!");
+        }
     }
 }

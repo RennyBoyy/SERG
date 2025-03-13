@@ -3,17 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class Back2MM : MonoBehaviour
 {
-    public AudioManager audioManager;
-
     public void LoadMainMenu()
     {
-        // Stop the background music when transitioning to Main Menu
-        if (audioManager != null)
+        // Access AudioManager via its singleton instance
+        if (AudioManager.Instance != null)
         {
-            audioManager.StopBackgroundMusic();
+            AudioManager.Instance.StopBackgroundMusic();
         }
 
-        // Load the main menu scene
+        // Reset the time scale to normal in case it was paused
+        Time.timeScale = 1.0f;
+
+        // Load the MainMenu scene
         SceneManager.LoadScene("MainMenu");
     }
 }
